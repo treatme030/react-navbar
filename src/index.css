@@ -181,13 +181,14 @@ nav {
 .social-icons {
   display: none;
 }
+/* toggle 버튼 클릭시 높이 변경 */
 .links-container {
   height: 0;
   overflow: hidden;
   transition: var(--transition);
 }
 .show-container {
-  height: 10rem;
+  height: 13rem;
 }
 @media screen and (min-width: 800px) {
   .nav-center {
@@ -204,6 +205,10 @@ nav {
   .nav-toggle {
     display: none;
   }
+  /* useRef를 사용해서 showLinks의 값 변경에 따른 높이 변경을  
+  인라인 스타일 변경으로 해서, 브라우저 크기가 커지면 토글버튼이 사라지면서 
+  showLinks의 상태값이 false로 되어 높이가 0이 되버림 
+  --> !important를 꼭 해줘야 함*/
   .links-container {
     height: auto !important;
   }
